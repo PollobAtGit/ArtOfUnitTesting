@@ -21,7 +21,14 @@ namespace Service.Implementation
             if (string.IsNullOrWhiteSpace(file))
                 throw new ArgumentNullException($"File must be given to validate file");
 
-            WasLastFileValid = _fileReader.GetAllLines(ConfigurationFile).Any(file.EndsWith);
+            try
+            {
+                WasLastFileValid = _fileReader.GetAllLines(ConfigurationFile).Any(file.EndsWith);
+            }
+            catch (Exception e)
+            {
+                WasLastFileValid = false;
+            }
         }
     }
 }
