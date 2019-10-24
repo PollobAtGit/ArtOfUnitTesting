@@ -28,12 +28,12 @@ namespace NUnitTest.Fakes
     class FakeConfigurableFileReader : IFileReader
     {
         private readonly Exception _exceptionToThrow;
-        private readonly List<string> _allowedExtensions;
+        private readonly List<string> _fakedReadLines;
 
-        public FakeConfigurableFileReader(Exception exceptionToThrow = null, List<string> allowedExtensions = null)
+        public FakeConfigurableFileReader(Exception exceptionToThrow = null, List<string> fakedReadLines = null)
         {
             _exceptionToThrow = exceptionToThrow;
-            _allowedExtensions = allowedExtensions;
+            _fakedReadLines = fakedReadLines;
         }
 
         public List<string> GetAllLines(string fileWithOutPath)
@@ -41,7 +41,7 @@ namespace NUnitTest.Fakes
             if (_exceptionToThrow != null)
                 throw _exceptionToThrow;
 
-            return _allowedExtensions;
+            return _fakedReadLines;
         }
     }
 }

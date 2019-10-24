@@ -31,6 +31,8 @@ namespace ArtOfUnitTesting.UI
 
             services.AddTransient<ILogFileAnalyzer, LogFileAnalyzer>();
             services.AddTransient<IFileReader, FileReader>();
+            services.AddTransient<IIntegerParser, IntegerParser>();
+            services.AddTransient<IFactory<IFileReader>, FileReaderFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
