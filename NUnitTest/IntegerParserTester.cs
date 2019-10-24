@@ -8,7 +8,7 @@ using Service.Interface;
 namespace NUnitTest
 {
     [TestFixture]
-    public class NumberParserTester
+    public class IntegerParserTester
     {
         [Test]
         public void Should_Return_Failure_When_Reader_Is_Not_Configured()
