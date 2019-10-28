@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\InternalChecker\InternalChecker.csproj" />
     <ProjectReference Include="..\Service\Service.csproj" />
   </ItemGroup>
 
