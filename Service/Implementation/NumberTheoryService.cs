@@ -1,5 +1,4 @@
-﻿using System;
-using Service.Exceptions;
+﻿using Service.Exceptions;
 using Service.Interface;
 
 namespace Service.Implementation
