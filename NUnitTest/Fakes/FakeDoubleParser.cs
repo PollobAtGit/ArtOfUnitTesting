@@ -15,7 +15,7 @@ namespace NUnitTest.Fakes
             _fakedReadLines = fakedReadLines;
         }
 
-        protected override IFileReader GetReader()
+        public override IFileReader GetReader()
         {
             if (!_isConfigurable)
                 return null;

@@ -31,6 +31,6 @@ namespace Service.Implementation
             }
         }
 
-        protected virtual IFileReader GetReader() => new FileReader();
+        public virtual IFileReader GetReader() => new FileReader();
     }
 }
