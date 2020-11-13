@@ -1,11 +1,12 @@
 using System;
 using System.Linq;
+using Explore.AutoFixture.Model;
 using Explore.XUnit;
 using FluentAssertions;
 using Ploeh.AutoFixture;
 using Xunit;
 
-namespace Explore.AutoFixture
+namespace Explore.AutoFixture.Test
 {
     public class GalleryShould
     {

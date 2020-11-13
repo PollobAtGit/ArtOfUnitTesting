@@ -1,4 +1,4 @@
-namespace Explore.AutoFixture
+namespace Explore.AutoFixture.Repository
 {
     internal class Repository : IRepository
     {

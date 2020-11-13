@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Explore.AutoFixture
+namespace Explore.AutoFixture.Model
 {
     [DebuggerDisplay("{" + nameof(SelectedImage) + "}")]
     internal class Gallery

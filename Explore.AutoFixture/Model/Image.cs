@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace Explore.AutoFixture
+namespace Explore.AutoFixture.Model
 {
     [DebuggerDisplay("{" + nameof(Id) + "}")]
     internal class Image : IEquatable<Image>
