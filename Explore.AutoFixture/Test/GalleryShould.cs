@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
+using AutoFixture;
 using Explore.AutoFixture.Model;
 using Explore.XUnit;
 using FluentAssertions;
-using Ploeh.AutoFixture;
 using Xunit;
 
 namespace Explore.AutoFixture.Test

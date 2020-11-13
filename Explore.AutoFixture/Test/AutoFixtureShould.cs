@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoFixture;
 using Explore.AutoFixture.Model;
 using Explore.AutoFixture.Repository;
 using FluentAssertions;
 using Newtonsoft.Json;
-using Ploeh.AutoFixture;
 using Xunit;
 using Xunit.Abstractions;
 
