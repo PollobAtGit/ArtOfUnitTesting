@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using FluentAssertions;
@@ -172,31 +171,5 @@ namespace Explore.AutoFixture
 
             _outputHelper.WriteLine(JsonConvert.SerializeObject(repository));
         }
-    }
-
-    internal class DataStore
-    {
-        public Repository Repository { get; }
-
-        public DataStore(Repository repository) => Repository = repository;
-    }
-
-    internal interface IRepository
-    {
-        int Index { get; set; }
-
-        string Identifier { get; set; }
-    }
-
-    internal class Repository : IRepository
-    {
-        public int Index { get; set; }
-
-        public string Identifier { get; set; }
-    }
-
-    internal class Component
-    {
-        public IList<Repository> Repositories { get; } = new List<Repository>();
     }
 }
