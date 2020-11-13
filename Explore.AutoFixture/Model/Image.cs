@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Explore.AutoFixture.Model
 {
     [DebuggerDisplay("{" + nameof(Id) + "}")]
-    internal class Image : IEquatable<Image>
+    public class Image : IEquatable<Image>
     {
         public Guid Id { get; set; }
 

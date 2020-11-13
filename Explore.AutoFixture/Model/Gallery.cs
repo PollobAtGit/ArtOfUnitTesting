@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace Explore.AutoFixture.Model
 {
     [DebuggerDisplay("{" + nameof(SelectedImage) + "}")]
-    internal class Gallery
+    public class Gallery
     {
         private Image _selectedImage;
 

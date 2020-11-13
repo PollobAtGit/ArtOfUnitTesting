@@ -1,6 +1,6 @@
 namespace Explore.AutoFixture.Repository
 {
-    internal class Repository : IRepository
+    public class Repository : IRepository
     {
         public int Index { get; set; }
 
