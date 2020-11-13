@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using FluentAssertions;
@@ -170,6 +171,15 @@ namespace Explore.AutoFixture
             repository.Identifier.Should().NotBeEmpty();
 
             _outputHelper.WriteLine(JsonConvert.SerializeObject(repository));
+        }
+
+        [Fact]
+        public void Add_Multiple_Instances_Of_Repository_To_A_Collection_Of_Repositories()
+        {
+            var repositories = new List<Repository>() as ICollection<Repository>;
+            _fixture.AddManyTo(repositories);
+
+            repositories.Should().NotBeEmpty();
         }
     }
 }
