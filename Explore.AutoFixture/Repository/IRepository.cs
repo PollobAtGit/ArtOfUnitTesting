@@ -1,6 +1,6 @@
 namespace Explore.AutoFixture.Repository
 {
-    internal interface IRepository
+    public interface IRepository
     {
         int Index { get; set; }
 

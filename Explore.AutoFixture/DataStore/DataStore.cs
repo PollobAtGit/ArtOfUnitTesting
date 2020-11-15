@@ -1,4 +1,4 @@
-namespace Explore.AutoFixture.Model
+namespace Explore.AutoFixture.DataStore
 {
     internal class DataStore
     {

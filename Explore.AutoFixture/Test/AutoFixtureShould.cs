@@ -71,7 +71,7 @@ namespace Explore.AutoFixture.Test
         [Fact]
         public void Create_Nested_Dependent_Objects_As_Per_Automatic_Auto_Fixture_Behavior_When_Requested()
         {
-            var dataStore = _fixture.Create<DataStore>();
+            var dataStore = _fixture.Create<DataStore.DataStore>();
 
             dataStore.Should().NotBeNull();
             dataStore.Repository.Should().NotBeNull();
