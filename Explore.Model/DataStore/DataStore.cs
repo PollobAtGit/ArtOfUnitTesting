@@ -1,6 +1,6 @@
-namespace Explore.AutoFixture.DataStore
+namespace Explore.Model.DataStore
 {
-    internal class DataStore
+    public class DataStore
     {
         public Repository.Repository Repository { get; }
 

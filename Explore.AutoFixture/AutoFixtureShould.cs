@@ -2,14 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoFixture;
-using Explore.AutoFixture.Model;
-using Explore.AutoFixture.Repository;
+using Explore.Model.DataStore;
+using Explore.Model.Repository;
 using FluentAssertions;
 using Newtonsoft.Json;
 using Xunit;
 using Xunit.Abstractions;
+using Component = Explore.Model.Model.Component;
 
-namespace Explore.AutoFixture.Test
+namespace Explore.AutoFixture
 {
     public class AutoFixtureShould
     {
@@ -58,12 +59,12 @@ namespace Explore.AutoFixture.Test
         [Fact]
         public void Create_Complex_Type_When_Requested()
         {
-            var dataStore = _fixture.Create<Repository.Repository>();
+            var dataStore = _fixture.Create<Repository>();
 
             dataStore.Should().NotBeNull();
 
             dataStore.Index.Should().NotBe(0);
-            dataStore.Identifier.Should().StartWith(nameof(Repository.Repository.Identifier));
+            dataStore.Identifier.Should().StartWith(nameof(Repository.Identifier));
 
             _outputHelper.WriteLine(JsonConvert.SerializeObject(dataStore));
         }
@@ -71,13 +72,13 @@ namespace Explore.AutoFixture.Test
         [Fact]
         public void Create_Nested_Dependent_Objects_As_Per_Automatic_Auto_Fixture_Behavior_When_Requested()
         {
-            var dataStore = _fixture.Create<DataStore.DataStore>();
+            var dataStore = _fixture.Create<DataStore>();
 
             dataStore.Should().NotBeNull();
             dataStore.Repository.Should().NotBeNull();
 
             dataStore.Repository.Index.Should().NotBe(0);
-            dataStore.Repository.Identifier.Should().StartWith(nameof(Repository.Repository.Identifier));
+            dataStore.Repository.Identifier.Should().StartWith(nameof(Repository.Identifier));
 
             _outputHelper.WriteLine(JsonConvert.SerializeObject(dataStore));
         }
@@ -93,13 +94,13 @@ namespace Explore.AutoFixture.Test
         [Fact]
         public void Inject_Fake_Implementation_Of_An_Abstract_Type_If_Registered()
         {
-            _fixture.Register<IRepository>(() => _fixture.Create<Repository.Repository>());
+            _fixture.Register<IRepository>(() => _fixture.Create<Repository>());
 
             var repository = _fixture.Create<IRepository>();
 
             repository.Should().NotBeNull();
             repository.Index.Should().NotBe(0);
-            repository.Identifier.Should().StartWith(nameof(Repository.Repository.Identifier));
+            repository.Identifier.Should().StartWith(nameof(Repository.Identifier));
 
             _outputHelper.WriteLine(JsonConvert.SerializeObject(repository));
         }
@@ -122,7 +123,7 @@ namespace Explore.AutoFixture.Test
         [Fact]
         public void Create_A_Sequence_Of_Non_Null_Objects_Of_Requested_Type()
         {
-            var repositories = _fixture.CreateMany<Repository.Repository>().ToList();
+            var repositories = _fixture.CreateMany<Repository>().ToList();
 
             repositories.Should().NotBeEmpty();
 
@@ -152,7 +153,7 @@ namespace Explore.AutoFixture.Test
         public void Have_Default_Values_For_Properties_Provided_That_Auto_Properties_Are_Omitted()
         {
             var repository = _fixture
-                .Build<Repository.Repository>()
+                .Build<Repository>()
                 .OmitAutoProperties()
                 .Create();
 
@@ -164,7 +165,7 @@ namespace Explore.AutoFixture.Test
         public void Have_Default_Value_For_Properties_That_Are_Disabled()
         {
             var repository = _fixture
-                .Build<Repository.Repository>()
+                .Build<Repository>()
                 .Without(x => x.Index)
                 .Create();
 
@@ -177,7 +178,7 @@ namespace Explore.AutoFixture.Test
         [Fact]
         public void Add_Multiple_Instances_Of_Repository_To_A_Collection_Of_Repositories()
         {
-            var repositories = new List<Repository.Repository>() as ICollection<Repository.Repository>;
+            var repositories = new List<Repository>() as ICollection<Repository>;
             _fixture.AddManyTo(repositories);
 
             repositories.Should().NotBeEmpty();

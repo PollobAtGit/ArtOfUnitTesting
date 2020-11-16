@@ -1,6 +1,6 @@
-using Explore.AutoFixture.Repository;
+using Explore.Model.Repository;
 
-namespace Explore.AutoFixture.DataStore
+namespace Explore.Model.DataStore
 {
     public class GalleryDataStore
     {

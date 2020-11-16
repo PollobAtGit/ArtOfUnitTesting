@@ -1,4 +1,4 @@
-namespace Explore.AutoFixture.Repository
+namespace Explore.Model.Repository
 {
     public interface IRepository
     {

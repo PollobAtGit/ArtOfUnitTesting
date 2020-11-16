@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace Explore.AutoFixture.Model
+namespace Explore.Model.Model
 {
-    internal class Component
+    public class Component
     {
         public IList<Repository.Repository> Repositories { get; } = new List<Repository.Repository>();
     }

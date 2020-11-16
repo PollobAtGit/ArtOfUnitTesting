@@ -1,8 +1,8 @@
 using System;
 
-namespace Explore.AutoFixture.DataStore
+namespace Explore.Model.DataStore
 {
-    internal class CatalogDataStore
+    public class CatalogDataStore
     {
         public Guid Id { get; set; }
 

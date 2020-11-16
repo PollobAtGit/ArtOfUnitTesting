@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Explore.Model\Explore.Model.csproj" />
     <ProjectReference Include="..\Explore.XUnit\Explore.XUnit.csproj" />
   </ItemGroup>
 

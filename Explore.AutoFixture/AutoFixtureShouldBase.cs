@@ -1,12 +1,12 @@
 using System;
 using AutoFixture;
 using AutoFixture.AutoMoq;
-using Explore.AutoFixture.DataStore;
-using Explore.AutoFixture.Repository;
+using Explore.Model.DataStore;
+using Explore.Model.Repository;
 using FluentAssertions;
 using Xunit;
 
-namespace Explore.AutoFixture.Test
+namespace Explore.AutoFixture
 {
     public class AutoFixtureWithAutoMoqConfigurationShould
     {

@@ -1,4 +1,4 @@
-namespace Explore.AutoFixture.Model
+namespace Explore.Model.Model
 {
     public class Path
     {
