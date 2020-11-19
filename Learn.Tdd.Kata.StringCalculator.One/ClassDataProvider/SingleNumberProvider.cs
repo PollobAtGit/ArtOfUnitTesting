@@ -8,7 +8,7 @@ namespace Learn.Tdd.Kata.StringCalculator.One.ClassDataProvider
     {
         public IEnumerator<object[]> GetEnumerator() =>
             Enumerable
-                .Range(-10, 20)
+                .Range(0, 20)
                 .Select(x => new object[] { x.ToString() })
                 .GetEnumerator();
 

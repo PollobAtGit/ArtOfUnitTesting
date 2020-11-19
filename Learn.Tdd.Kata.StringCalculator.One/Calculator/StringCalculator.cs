@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Learn.Tdd.Kata.StringCalculator.One.Exceptions;
 
 namespace Learn.Tdd.Kata.StringCalculator.One.Calculator
 {
@@ -23,13 +24,21 @@ namespace Learn.Tdd.Kata.StringCalculator.One.Calculator
                 ? new[] { parts.First().Trim('/').Trim('/') }
                 : new[] { ",", "\n" };
 
-            var numbers = parts.Last().Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            var numbers = parts.Last().Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim()).ToList();
 
-            if (numbers.Length == 1)
+            var negativeNumbers = numbers
+                .Where(x => x.StartsWith("-"))
+                .Select(x => x)
+                .ToList();
+
+            if (negativeNumbers.Any())
+                throw new NegativeNumbersAreNotAllowedException(negativeNumbers);
+
+            if (numbers.Count == 1)
                 return int.Parse(numbers.First());
 
-            if (numbers.Length > 1)
-                return numbers.Select(x => int.Parse(x.Trim())).Sum();
+            if (numbers.Count > 1)
+                return numbers.Select(int.Parse).Sum();
 
             throw new NotImplementedException();
         }

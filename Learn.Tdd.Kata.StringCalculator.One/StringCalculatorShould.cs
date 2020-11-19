@@ -1,18 +1,23 @@
+using System;
 using System.Linq;
 using AutoFixture;
 using Learn.Tdd.Kata.StringCalculator.One.ClassDataProvider;
+using Learn.Tdd.Kata.StringCalculator.One.Exceptions;
 using Shouldly;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Learn.Tdd.Kata.StringCalculator.One
 {
     public class StringCalculatorShould
     {
         private readonly Fixture _fixture;
+        private readonly ITestOutputHelper _outputHelper;
         private readonly Calculator.StringCalculator _calculator;
 
-        public StringCalculatorShould()
+        public StringCalculatorShould(ITestOutputHelper outputHelper)
         {
+            _outputHelper = outputHelper;
             _fixture = new Fixture();
             _calculator = _fixture.Create<Calculator.StringCalculator>();
         }
@@ -66,6 +71,36 @@ namespace Learn.Tdd.Kata.StringCalculator.One
             _calculator
                 .Add(string.Join("", parts.First()))
                 .ShouldBe(int.Parse(parts.Last().Trim()));
+        }
+
+        [Theory]
+        [InlineData("-4,4")]
+        [InlineData("4,-4")]
+        [InlineData("-4,-4")]
+        public void Throw_Exception_Provided_That_The_Received_Input_Contains_Negative_Numbers(string input)
+        {
+            Action act = () => _calculator.Add(input);
+            act.ShouldThrow<NegativeNumbersAreNotAllowedException>();
+        }
+
+        [Theory]
+        [InlineData("-4,4")]
+        [InlineData("4,-4")]
+        [InlineData("-4,-4")]
+        public void Throw_Exception_With_Negative_Numbers_That_Were_Provided_In_The_Received_Input(string input)
+        {
+            Action act = () => _calculator.Add(input);
+
+            var expectedException = act.ShouldThrow<NegativeNumbersAreNotAllowedException>();
+
+            expectedException.NegativeNumbers.ShouldNotBeEmpty();
+
+            expectedException.NegativeNumbers
+                .Select(int.Parse)
+                .Count(x => x < 0)
+                .ShouldBe(expectedException.NegativeNumbers.Count);
+
+            _outputHelper.WriteLine(string.Join(", ", expectedException.NegativeNumbers));
         }
     }
 }
