@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using AutoFixture;
 using Learn.Tdd.Kata.StringCalculator.One.ClassDataProvider;
@@ -34,6 +33,39 @@ namespace Learn.Tdd.Kata.StringCalculator.One
         {
             var firstNumber = int.Parse(input.Split(",").First());
             _calculator.Add(input).ShouldBe(firstNumber + firstNumber);
+        }
+
+        [Theory]
+        [ClassData(typeof(MoreThanTwoNumbersSeparatedByCommaProvider))]
+        public void Return_Added_Value_Provided_That_The_Received_String_Contains_Multiple_Numbers(string input)
+        {
+            var parts = input.Split("=");
+
+            _calculator
+                .Add(string.Join("", parts.First()))
+                .ShouldBe(int.Parse(parts.Last().Trim()));
+        }
+
+        [Theory]
+        [ClassData(typeof(MoreThanTwoNumbersSeparatedByNewLineProvider))]
+        public void Return_Added_Value_Provided_That_The_Received_String_Has_New_Line_As_Separator(string input)
+        {
+            var parts = input.Split("=");
+
+            _calculator
+                .Add(string.Join("", parts.First()))
+                .ShouldBe(int.Parse(parts.Last().Trim()));
+        }
+
+        [Theory]
+        [ClassData(typeof(MoreThanTwoNumbersSeparatedByDelimiterDefinedAtBeginningOfInput))]
+        public void Return_Added_Value_Provided_That_The_Received_String_Has_Changing_Delimiter_Defined_As_The_Third_Character(string input)
+        {
+            var parts = input.Split("=");
+
+            _calculator
+                .Add(string.Join("", parts.First()))
+                .ShouldBe(int.Parse(parts.Last().Trim()));
         }
     }
 }

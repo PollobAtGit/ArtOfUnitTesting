@@ -10,14 +10,28 @@ namespace Learn.Tdd.Kata.StringCalculator.One.Calculator
             if (input == "")
                 return 0;
 
-            var numbers = input.Split(",");
+            var isDelimiterDefinedAtTheBeginning = input.StartsWith("//");
 
-            return numbers.Length switch
-            {
-                1 => int.Parse(numbers.First()),
-                2 => int.Parse(numbers.First()) + int.Parse(numbers.Skip(1).First()),
-                _ => throw new NotImplementedException()
-            };
+            var parts = isDelimiterDefinedAtTheBeginning
+                ? input.Split("\n")
+                : new[]
+                {
+                    input
+                };
+
+            var delimiters = isDelimiterDefinedAtTheBeginning
+                ? new[] { parts.First().Trim('/').Trim('/') }
+                : new[] { ",", "\n" };
+
+            var numbers = parts.Last().Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+
+            if (numbers.Length == 1)
+                return int.Parse(numbers.First());
+
+            if (numbers.Length > 1)
+                return numbers.Select(x => int.Parse(x.Trim())).Sum();
+
+            throw new NotImplementedException();
         }
     }
 }
