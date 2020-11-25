@@ -11,15 +11,13 @@ namespace Learn.Tdd.Kata.StringCalculator.One
 {
     public class StringCalculatorShould
     {
-        private readonly Fixture _fixture;
         private readonly ITestOutputHelper _outputHelper;
         private readonly Calculator.StringCalculator _calculator;
 
         public StringCalculatorShould(ITestOutputHelper outputHelper)
         {
             _outputHelper = outputHelper;
-            _fixture = new Fixture();
-            _calculator = _fixture.Create<Calculator.StringCalculator>();
+            _calculator = new Fixture().Create<Calculator.StringCalculator>();
         }
 
         [Fact]
@@ -41,7 +39,7 @@ namespace Learn.Tdd.Kata.StringCalculator.One
         }
 
         [Theory]
-        [ClassData(typeof(MoreThanTwoNumbersSeparatedByCommaProvider))]
+        [ClassData(typeof(MoreThanTwoOnlyPositiveNumbersSeparatedByCommaProvider))]
         public void Return_Added_Value_Provided_That_The_Received_String_Contains_Multiple_Numbers(string input)
         {
             var parts = input.Split("=");
@@ -74,9 +72,7 @@ namespace Learn.Tdd.Kata.StringCalculator.One
         }
 
         [Theory]
-        [InlineData("-4,4")]
-        [InlineData("4,-4")]
-        [InlineData("-4,-4")]
+        [ClassData(typeof(MoreThanTwoNegativeNumbersSeparatedByCommaProvider))]
         public void Throw_Exception_Provided_That_The_Received_Input_Contains_Negative_Numbers(string input)
         {
             Action act = () => _calculator.Add(input);
@@ -84,11 +80,11 @@ namespace Learn.Tdd.Kata.StringCalculator.One
         }
 
         [Theory]
-        [InlineData("-4,4")]
-        [InlineData("4,-4")]
-        [InlineData("-4,-4")]
+        [ClassData(typeof(MoreThanTwoNegativeNumbersSeparatedByCommaProvider))]
         public void Throw_Exception_With_Negative_Numbers_That_Were_Provided_In_The_Received_Input(string input)
         {
+            input = string.Join("", input.Split("=").First());
+
             Action act = () => _calculator.Add(input);
 
             var expectedException = act.ShouldThrow<NegativeNumbersAreNotAllowedException>();

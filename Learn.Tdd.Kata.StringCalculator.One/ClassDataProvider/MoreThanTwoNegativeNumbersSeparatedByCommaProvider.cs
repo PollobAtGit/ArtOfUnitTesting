@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Learn.Tdd.Kata.StringCalculator.One.ClassDataProvider
 {
-    public class MoreThanTwoNumbersSeparatedByNewLineProvider : IEnumerable<object[]>
+    public class MoreThanTwoNegativeNumbersSeparatedByCommaProvider : IEnumerable<object[]>
     {
         private readonly MoreThanTwoNumbersProvider _numbersProvider = new MoreThanTwoNumbersProvider
         {
-            Delimiter = "\n",
-            AllowNegatives = false
+            Delimiter = ",",
+            AllowNegatives = true
         };
 
         public IEnumerator<object[]> GetEnumerator() => _numbersProvider.GetEnumerator();

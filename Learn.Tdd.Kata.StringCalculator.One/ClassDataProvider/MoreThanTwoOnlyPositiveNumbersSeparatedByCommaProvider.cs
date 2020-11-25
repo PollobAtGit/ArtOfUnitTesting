@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Learn.Tdd.Kata.StringCalculator.One.ClassDataProvider
 {
-    public class MoreThanTwoNumbersSeparatedByNewLineProvider : IEnumerable<object[]>
+    public class MoreThanTwoOnlyPositiveNumbersSeparatedByCommaProvider : IEnumerable<object[]>
     {
         private readonly MoreThanTwoNumbersProvider _numbersProvider = new MoreThanTwoNumbersProvider
         {
-            Delimiter = "\n",
+            Delimiter = ",",
             AllowNegatives = false
         };
 
