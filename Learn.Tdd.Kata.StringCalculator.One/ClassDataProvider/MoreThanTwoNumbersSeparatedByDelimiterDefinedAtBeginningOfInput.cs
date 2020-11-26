@@ -10,6 +10,8 @@ namespace Learn.Tdd.Kata.StringCalculator.One.ClassDataProvider
             yield return new object[] { "//;\n1;2 = 3" };
             yield return new object[] { "//,\n1,2 = 3" };
             yield return new object[] { "//|\n1|2 = 3" };
+            yield return new object[] { "//***\n1***2***3 == 6" };
+            yield return new object[] { "//[***]\n1***2***3 == 6" };
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

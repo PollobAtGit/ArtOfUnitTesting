@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Learn.Tdd.Kata.StringCalculator.One.Exceptions;
 
@@ -20,14 +21,15 @@ namespace Learn.Tdd.Kata.StringCalculator.One.Calculator
 
                 var parts = isDelimiterDefinedAtTheBeginning
                     ? input.Split("\n")
-                    : new[] { input };
+                    : new[] {input};
 
                 var delimiters = isDelimiterDefinedAtTheBeginning
-                    ? new[] { parts.First().Trim('/').Trim('/') }
-                    : new[] { ",", "\n" };
+                    ? ExtractDelimiters(parts.First().TrimStart('/').TrimStart('/'))
+                    : new[] {",", "\n"};
 
-                var numbers = parts.Last()
-                    .Split(delimiters, StringSplitOptions.RemoveEmptyEntries)
+                var splittedNumbers = parts.Last().Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+
+                var numbers = splittedNumbers
                     .Select(x => int.Parse(x.Trim()))
                     .Where(x => x <= MaxAllowedValue)
                     .ToList();
@@ -39,6 +41,10 @@ namespace Learn.Tdd.Kata.StringCalculator.One.Calculator
 
                 return numbers.Sum();
             }
+            catch (Exception e)
+            {
+                throw;
+            }
             finally
             {
                 _invocationCount += 1;
@@ -46,6 +52,14 @@ namespace Learn.Tdd.Kata.StringCalculator.One.Calculator
             }
 
             throw new NotImplementedException();
+        }
+
+        private static string[] ExtractDelimiters(string parts)
+        {
+            return parts
+                .Split("][")
+                .Select(x => x.Trim('[', ']'))
+                .ToArray();
         }
 
         public int GetCalledCount() => _invocationCount;

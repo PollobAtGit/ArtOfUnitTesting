@@ -161,6 +161,16 @@ namespace Learn.Tdd.Kata.StringCalculator.One
             result.ShouldBe(ExtractResultPortionFromStatement(input));
         }
 
+        [Theory]
+        [ClassData(typeof(MoreThanTwoNumbersSeparatedByDelimiterDefinedAtBeginningOfInput))]
+        [ClassData(typeof(MoreThanTwoNumbersSeparatedByMultipleDelimitersDefinedAtBeginningOfInput))]
+        public void Return_Added_Value_Provided_That_Input_Is_Delimited_By_Multiple_Delimiters(string input)
+        {
+            var result = _calculator.Add(ExtractInputPortionFromStatement(input));
+
+            result.ShouldBe(ExtractResultPortionFromStatement(input));
+        }
+
         private static string ExtractInputPortionFromStatement(string input) => input.Split("=").First();
 
         private static int ExtractResultPortionFromStatement(string input)
