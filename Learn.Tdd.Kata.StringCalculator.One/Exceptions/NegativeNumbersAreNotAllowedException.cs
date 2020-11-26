@@ -5,8 +5,8 @@ namespace Learn.Tdd.Kata.StringCalculator.One.Exceptions
 {
     public class NegativeNumbersAreNotAllowedException : Exception
     {
-        public List<string> NegativeNumbers { get; }
+        public List<int> NegativeNumbers { get; }
 
-        public NegativeNumbersAreNotAllowedException(List<string> negativeNumbers) => NegativeNumbers = negativeNumbers;
+        public NegativeNumbersAreNotAllowedException(List<int> negativeNumbers) => NegativeNumbers = negativeNumbers;
     }
 }
