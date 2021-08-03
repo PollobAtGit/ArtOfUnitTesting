@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Shouldly;
 using Utility;
 
@@ -11,6 +12,24 @@ namespace Base.Tests
         public VerifyDsl(TestSuitBase.OutputHelperImp outputHelper)
         {
             _outputHelper = outputHelper;
+        }
+
+        public VerifyDsl Verify_Collection_Is_Populated<T>(List<T> v) where T : class
+        {
+            v.ShouldNotBeEmpty();
+            
+            _outputHelper.XUnitOutputHelper.WriteLine($"Collection of [{typeof(T).Name}] is not empty");
+
+            return this;
+        }
+
+        public VerifyDsl Verify_Collection_Is_Empty<T>(List<T> v) where T : class
+        {
+            v.ShouldBeEmpty();
+
+            _outputHelper.XUnitOutputHelper.WriteLine($"Collection of [{typeof(T).Name}] is empty");
+
+            return this;
         }
 
         public VerifyDsl Verify_Defined<T>(T v) where T : class
