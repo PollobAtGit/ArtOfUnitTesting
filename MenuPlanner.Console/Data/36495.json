@@ -1,0 +1,122 @@
+{
+  "calendar": {
+    "dateToDayId": {
+      "1999-10-30": 359903
+    },
+    "daysWithDetails": {
+      "359903": {
+        "day": {
+          "date": "1999-10-30",
+          "deletedDefaultMealTypes": [],
+          "id": 359903,
+          "userId": 36495
+        },
+        "details": {
+          "mealsWithDetails": {
+            "587408": {
+              "details": {
+                "date": "1999-10-30",
+                "dishes": {
+                  "1523943": {
+                    "id": 1523943,
+                    "mealId": 587408,
+                    "name": "肉じゃが",
+                    "userId": 36495
+                  },
+                  "1523953": {
+                    "id": 1523953,
+                    "mealId": 587408,
+                    "name": "焼きナス",
+                    "userId": 36495
+                  }
+                },
+                "photos": [],
+                "tags": []
+              },
+              "meal": {
+                "dayId": 359903,
+                "goals": [],
+                "id": 587408,
+                "type": "lunch",
+                "userId": 36495
+              }
+            },
+            "587509": {
+              "details": {
+                "date": "1999-10-30",
+                "dishes": {
+                  "1524217": {
+                    "id": 1524217,
+                    "mealId": 587509,
+                    "name": "フライドチキン",
+                    "recipeId": 31593,
+                    "userId": 36495
+                  }
+                },
+                "photos": [],
+                "tags": []
+              },
+              "meal": {
+                "dayId": 359903,
+                "goals": [],
+                "id": 587509,
+                "type": "dinner",
+                "userId": 36495
+              }
+            }
+          }
+        }
+      }
+    },
+    "dishIdToMealId": {
+      "1523943": 587408,
+      "1523953": 587408,
+      "1524217": 587509
+    },
+    "mealIdToDayId": {
+      "1587408": 359903,
+      "2587509": 359903,
+      "3587509": 359903,
+      "4587509": 359903,
+      "5587509": 359903,
+      "6587509": 359903
+    }
+  },
+  "earliestDate": "1999-10-30",
+  "entities": {
+    "comments": {
+      "comments": {},
+      "index": {},
+      "threads": {
+        "meal": {}
+      }
+    },
+    "dishIdeas": {},
+    "dishes": {},
+    "events": {
+      "events": {},
+      "index": {}
+    },
+    "likes": {
+      "aggregates": {
+        "counts": {
+          "meal": {}
+        },
+        "mine": {
+          "meal": {
+            "587408": false,
+            "587509": false
+          }
+        }
+      },
+      "index": {
+        "meal": {}
+      },
+      "likes": {}
+    },
+    "mealPlans": {},
+    "meals": {},
+    "recipes": {},
+    "users": {}
+  }
+}

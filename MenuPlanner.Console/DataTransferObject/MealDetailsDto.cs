@@ -1,0 +1,4 @@
+﻿namespace MenuPlanner.Console.DataTransferObject
+{
+    
+}

@@ -1,0 +1,254 @@
+{
+    "calendar": {
+        "dateToDayId": {
+            "2016-08-22": 370200,
+            "2016-08-23": 370206,
+            "2016-08-24": 370208,
+            "2016-08-25": 370271,
+            "2016-08-26": 370223
+        },
+        "daysWithDetails": {
+            "370200": {
+                "day": {
+                    "date": "2016-08-22",
+                    "deletedDefaultMealTypes": [],
+                    "id": 370200,
+                    "userId": 37327
+                },
+                "details": {
+                    "mealsWithDetails": {
+                        "603971": {
+                            "details": {
+                                "date": "2016-08-22",
+                                "dishes": {
+                                    "1567539": {
+                                        "id": 1567539,
+                                        "mealId": 603971,
+                                        "name": "他人丼",
+                                        "userId": 37327
+                                    },
+                                    "1567542": {
+                                        "id": 1567542,
+                                        "mealId": 603971,
+                                        "name": "野菜",
+                                        "userId": 37327
+                                    }
+                                },
+                                "photos": [],
+                                "tags": []
+                            },
+                            "meal": {
+                                "dayId": 370200,
+                                "goals": [],
+                                "id": 603971,
+                                "type": "lunch",
+                                "userId": 37327
+                            }
+                        }
+                    }
+                }
+            },
+            "370206": {
+                "day": {
+                    "date": "2016-08-23",
+                    "deletedDefaultMealTypes": [],
+                    "id": 370206,
+                    "userId": 37327
+                },
+                "details": {
+                    "mealsWithDetails": {
+                        "603980": {
+                            "details": {
+                                "date": "2016-08-23",
+                                "dishes": {
+                                    "1567570": {
+                                        "id": 1567570,
+                                        "mealId": 603980,
+                                        "name": "なすと豚肉の生姜重ね蒸し",
+                                        "recipeId": 46993,
+                                        "userId": 37327
+                                    }
+                                },
+                                "photos": [],
+                                "tags": []
+                            },
+                            "meal": {
+                                "dayId": 370206,
+                                "goals": [],
+                                "id": 603980,
+                                "type": "dinner",
+                                "userId": 37327
+                            }
+                        }
+                    }
+                }
+            },
+            "370208": {
+                "day": {
+                    "date": "2016-08-24",
+                    "deletedDefaultMealTypes": [],
+                    "id": 370208,
+                    "userId": 37327
+                },
+                "details": {
+                    "mealsWithDetails": {
+                        "603982": {
+                            "details": {
+                                "date": "2016-08-24",
+                                "dishes": {},
+                                "photos": [],
+                                "tags": []
+                            },
+                            "meal": {
+                                "dayId": 370208,
+                                "goals": [],
+                                "id": 603982,
+                                "type": "lunch",
+                                "userId": 37327
+                            }
+                        },
+                        "603984": {
+                            "details": {
+                                "date": "2016-08-24",
+                                "dishes": {},
+                                "photos": [],
+                                "tags": []
+                            },
+                            "meal": {
+                                "dayId": 370208,
+                                "goals": [],
+                                "id": 603984,
+                                "type": "dinner",
+                                "userId": 37327
+                            }
+                        }
+                    }
+                }
+            },
+            "370223": {
+                "day": {
+                    "date": "2016-08-26",
+                    "deletedDefaultMealTypes": [],
+                    "id": 370223,
+                    "userId": 37327
+                },
+                "details": {
+                    "mealsWithDetails": {
+                        "604005": {
+                            "details": {
+                                "date": "2016-08-26",
+                                "dishes": {
+                                    "1567789": {
+                                        "id": 1567789,
+                                        "mealId": 604005,
+                                        "name": "きゅうりレタストマトサラダ",
+                                        "userId": 37327
+                                    }
+                                },
+                                "photos": [],
+                                "tags": []
+                            },
+                            "meal": {
+                                "dayId": 370223,
+                                "goals": [],
+                                "id": 604005,
+                                "type": "dinner",
+                                "userId": 37327
+                            }
+                        }
+                    }
+                }
+            },
+            "370271": {
+                "day": {
+                    "date": "2016-08-25",
+                    "deletedDefaultMealTypes": [],
+                    "id": 370271,
+                    "userId": 37327
+                },
+                "details": {
+                    "mealsWithDetails": {
+                        "604075": {
+                            "details": {
+                                "date": "2016-08-25",
+                                "dishes": {
+                                    "1567781": {
+                                        "id": 1567781,
+                                        "mealId": 604075,
+                                        "name": "豚コマきゅうり",
+                                        "userId": 37327
+                                    }
+                                },
+                                "photos": [],
+                                "tags": []
+                            },
+                            "meal": {
+                                "dayId": 370271,
+                                "goals": [],
+                                "id": 604075,
+                                "type": "dinner",
+                                "userId": 37327
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "dishIdToMealId": {
+            "1567539": 603971,
+            "1567542": 603971,
+            "1567570": 603980,
+            "1567781": 604075,
+            "1567789": 604005
+        },
+        "mealIdToDayId": {
+            "603971": 370200,
+            "603980": 370206,
+            "603982": 370208,
+            "603984": 370208,
+            "604005": 370223,
+            "604075": 370271
+        }
+    },
+    "earliestDate": "2016-08-22",
+    "entities": {
+        "comments": {
+            "comments": {},
+            "index": {},
+            "threads": {
+                "meal": {}
+            }
+        },
+        "dishIdeas": {},
+        "dishes": {},
+        "events": {
+            "events": {},
+            "index": {}
+        },
+        "likes": {
+            "aggregates": {
+                "counts": {
+                    "meal": {}
+                },
+                "mine": {
+                    "meal": {
+                        "603971": false,
+                        "603980": false,
+                        "603982": false,
+                        "603984": false,
+                        "604005": false,
+                        "604075": false
+                    }
+                }
+            },
+            "index": {
+                "meal": {}
+            },
+            "likes": {}
+        },
+        "mealPlans": {},
+        "meals": {},
+        "recipes": {},
+        "users": {}
+    }
+}
